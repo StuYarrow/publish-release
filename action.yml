@@ -1,0 +1,19 @@
+name: 'Publish a Release'
+description: 'Publish an existing draft release'
+author: 'Stu Yarrow'
+inputs:
+  id:
+    description: 'The release id. This can be from the output of the actions/create-release action'
+    required: true
+  owner:
+    description: 'Owner of the repository if it is not the current one'
+    required: false
+  repo:
+    description: 'Repository on which to release.  Used only if you want to create the release on another repo'
+    required: false
+runs:
+  using: 'node12'
+  main: 'dist/index.js'
+branding:
+  icon: 'tag'
+  color: 'gray-dark'
