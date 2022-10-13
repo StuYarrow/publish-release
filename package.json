@@ -1,24 +1,43 @@
 {
   "name": "publish-release",
-  "version": "1.0.3",
-  "main": "index.js",
-  "dependencies": {
-    "@actions/core": "^1.10.0",
-    "@actions/github": "^5.1.1"
-  },
+  "version": "1.1.0",
+  "description": "This GitHub Action (written in TypeScript) uses the [GitHub Release API](https://developer.github.com/v3/repos/releases/), specifically the [Update a Release](https://developer.github.com/v3/repos/releases/#update-a-release) endpoint, to set `draft=false` on an existing release.",
+  "main": "lib/main.js",
   "scripts": {
-    "package": "ncc build index.js  --license licenses.txt -o dist"
+    "build": "tsc",
+    "format": "prettier --write src/**/*.ts",
+    "format-check": "prettier --check src/**/*.ts",
+    "lint": "eslint src/**/*.ts",
+    "package": "ncc build --source-map --license licenses.txt",
+    "test": "jest",
+    "all": "npm run build && npm run format && npm run lint && npm run package && npm test"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/StuYarrow/publish-release.git"
   },
-  "keywords": [],
+  "keywords": [
+    "actions",
+    "release",
+    "publish"
+  ],
   "author": "Stu Yarrow",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/StuYarrow/publish-release/issues"
+  "dependencies": {
+    "@actions/core": "^1.10.0",
+    "@actions/github": "^5.1.1"
   },
-  "homepage": "https://github.com/StuYarrow/publish-release#readme",
-  "description": "This GitHub Action (written in JavaScript) uses the [GitHub Release API](https://developer.github.com/v3/repos/releases/), specifically the [Update a Release](https://developer.github.com/v3/repos/releases/#update-a-release) endpoint, to set `draft=false` on an existing release."
+  "devDependencies": {
+    "@types/node": "^18.8.5",
+    "@typescript-eslint/parser": "^4.33.0",
+    "@vercel/ncc": "^0.31.1",
+    "eslint": "^7.32.0",
+    "eslint-plugin-github": "^4.3.2",
+    "eslint-plugin-jest": "^25.3.2",
+    "jest": "^27.2.5",
+    "js-yaml": "^4.1.0",
+    "prettier": "2.5.1",
+    "ts-jest": "^27.1.2",
+    "typescript": "^4.4.4"
+  }
 }

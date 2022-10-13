@@ -12,8 +12,8 @@ inputs:
     description: 'Repository on which to release.  Used only if you want to create the release on another repo'
     required: false
 runs:
-  using: 'node12'
-  main: 'dist/index.js'
+  using: 'node16'
+  main: 'dist/index.ts'
 branding:
   icon: 'tag'
   color: 'gray-dark'
