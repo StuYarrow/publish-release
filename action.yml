@@ -13,7 +13,7 @@ inputs:
     required: false
 runs:
   using: 'node16'
-  main: 'dist/index.ts'
+  main: 'dist/index.js'
 branding:
   icon: 'tag'
   color: 'gray-dark'
