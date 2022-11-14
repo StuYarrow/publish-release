@@ -1,7 +1,7 @@
 # Publish an existing draft release
 This GitHub Action (written in TypeScript) uses the [GitHub Release API](https://developer.github.com/v3/repos/releases/), specifically the [Update a Release](https://developer.github.com/v3/repos/releases/#update-a-release) endpoint, to set `draft=false` on an existing release.
 
-This action is similar to [@`eregon/publish-release`](https://www.github.com/eregon/publish-release), but additionally has support for releases on repos other than the one from which it is run.
+This action is similar to [`eregon/publish-release`](https://www.github.com/eregon/publish-release), but additionally has support for releases on repos other than the one from which it is run.
 
 ## Usage
 ### Pre-requisites
@@ -10,7 +10,7 @@ Create a workflow `.yml` file in your `.github/workflows` directory. An [example
 ### Inputs
 For more information on these inputs, see the [API Documentation](https://developer.github.com/v3/repos/releases/#input)
 
-- `id`: The release id, e.g. from the `id` output of the [`@actions/create-release`](https://www.github.com/actions/create-release) GitHub Action.
+- `id`: The release id, e.g. from the `id` output of the [`actions/create-release`](https://www.github.com/actions/create-release) GitHub Action.
 - `owner`: The name of the owner of the repo. Used to identify the owner of the repository.  Used when cutting releases for external repositories.  Default: Current owner
 - `repo`: The name of the repository. Used to identify the repository on which to release.  Used when cutting releases for external repositories. Default: Current repository
 
