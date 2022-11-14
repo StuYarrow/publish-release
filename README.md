@@ -1,5 +1,5 @@
 # Publish an existing draft release
-This GitHub Action (written in JavaScript) uses the [GitHub Release API](https://developer.github.com/v3/repos/releases/), specifically the [Update a Release](https://developer.github.com/v3/repos/releases/#update-a-release) endpoint, to set `draft=false` on an existing release.
+This GitHub Action (written in TypeScript) uses the [GitHub Release API](https://developer.github.com/v3/repos/releases/), specifically the [Update a Release](https://developer.github.com/v3/repos/releases/#update-a-release) endpoint, to set `draft=false` on an existing release.
 
 This action is similar to [@`eregon/publish-release`](https://www.github.com/eregon/publish-release), but additionally has support for releases on repos other than the one from which it is run.
 
